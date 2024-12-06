@@ -28,7 +28,7 @@
     "antd": "^4.21.2",
     "assert": "^2.0.0",
     "axios": "^0.26.0",
-    "babel-loader": "^8.2.3",
+    "babel-loader": "^9.2.1",
     "barcode-validator": "^1.0.2",
     "body-parser": "^1.19.2",
     "bootstrap": "^3.4.1",
