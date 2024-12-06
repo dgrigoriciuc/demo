@@ -1,7 +1,429 @@
----
 version: 2
 updates:
   - package-ecosystem: npm
-    directory: '/'
+    directory: /
     schedule:
-      interval: 'weekly'
+      interval: monthly
+    open-pull-requests-limit: 10
+    groups:
+      server-core:
+        applies-to: version-updates
+        patterns:
+          - express
+          - q
+          - node-rest-client
+          - express-content-length-validator
+          - body-parser
+          - helmet
+        update-types:
+          - major
+      server-core-security-updates:
+        applies-to: security-updates
+        patterns:
+          - express
+          - q
+          - node-rest-client
+          - express-content-length-validator
+          - body-parser
+          - helmet
+        update-types:
+          - minor
+          - patch
+      server-utils:
+        applies-to: version-updates
+        patterns:
+          - unzip-stream
+          - xml2json
+          - node-cron
+          - node-sass
+        update-types:
+          - major
+      server-utils-security-updates:
+        applies-to: security-updates
+        patterns:
+          - unzip-stream
+          - xml2json
+          - node-cron
+          - node-sass
+        update-types:
+          - minor
+          - patch
+      logger:
+        applies-to: version-updates
+        patterns:
+          - morgan
+          - winston
+          - express-winston
+          - '@elastic/ecs-winston-format'
+        update-types:
+          - major
+      logger-security-updates:
+        applies-to: security-updates
+        patterns:
+          - morgan
+          - winston
+          - express-winston
+          - '@elastic/ecs-winston-format'
+        update-types:
+          - minor
+          - patch
+      session-management:
+        applies-to: version-updates
+        patterns:
+          - express-session
+          - cookie-parser
+          - connect-redis
+          - redis
+        update-types:
+          - major
+      session-management-security-updates:
+        applies-to: security-updates
+        patterns:
+          - express-session
+          - cookie-parser
+          - connect-redis
+          - redis
+        update-types:
+          - minor
+          - patch
+      client-core:
+        applies-to: version-updates
+        patterns:
+          - react
+          - react-dom
+          - styled-components
+        update-types:
+          - major
+      client-core-security-updates:
+        applies-to: security-updates
+        patterns:
+          - react
+          - react-dom
+          - styled-components
+        update-types:
+          - minor
+          - patch
+      client-utils:
+        applies-to: version-updates
+        patterns:
+          - htmlparser2
+          - moment
+          - lodash
+          - uuid
+          - dompurify
+          - prop-types
+          - reactjs-localstorage
+          - usehooks-ts
+        update-types:
+          - major
+      client-utils-security-updates:
+        applies-to: security-updates
+        patterns:
+          - htmlparser2
+          - moment
+          - lodash
+          - uuid
+          - dompurify
+          - prop-types
+          - reactjs-localstorage
+          - usehooks-ts
+        update-types:
+          - minor
+          - patch
+      router:
+        applies-to: version-updates
+        patterns:
+          - react-router
+          - react-router-dom
+        update-types:
+          - major
+      router-security-updates:
+        applies-to: security-updates
+        patterns:
+          - react-router
+          - react-router-dom
+        update-types:
+          - minor
+          - patch
+      internationalization:
+        applies-to: version-updates
+        patterns:
+          - react-i18next
+          - i18next
+          - i18next-browser-languagedetector
+          - i18next-fetch-backend
+          - i18next-multiload-backend-adapter
+        update-types:
+          - major
+      internationalization-security-updates:
+        applies-to: security-updates
+        patterns:
+          - react-i18next
+          - i18next
+          - i18next-browser-languagedetector
+          - i18next-fetch-backend
+          - i18next-multiload-backend-adapter
+        update-types:
+          - minor
+          - patch
+      resource-fetching:
+        applies-to: version-updates
+        patterns:
+          - swr
+          - axios
+          - react-redux
+          - redux
+          - redux-saga
+        update-types:
+          - major
+      resource-fetching-security-updates:
+        applies-to: security-updates
+        patterns:
+          - swr
+          - axios
+          - react-redux
+          - redux
+          - redux-saga
+        update-types:
+          - minor
+          - patch
+      node-browserify:
+        applies-to: version-updates
+        patterns:
+          - assert
+          - buffer
+          - browserify-zlib
+          - stream-browserify
+          - process
+          - query-string
+          - util
+        update-types:
+          - major
+      node-browserify-security-updates:
+        applies-to: security-updates
+        patterns:
+          - assert
+          - buffer
+          - browserify-zlib
+          - stream-browserify
+          - process
+          - query-string
+          - util
+        update-types:
+          - minor
+          - patch
+      ui:
+        applies-to: version-updates
+        patterns:
+          - antd
+          - react-bootstrap
+          - bootstrap
+          - bootstrap-languages
+          - reactcss
+        update-types:
+          - major
+      ui-security-updates:
+        applies-to: security-updates
+        patterns:
+          - antd
+          - react-bootstrap
+          - bootstrap
+          - bootstrap-languages
+          - reactcss
+        update-types:
+          - minor
+          - patch
+      ui-components:
+        applies-to: version-updates
+        patterns:
+          - rc-collapse
+          - rc-slider
+          - react-beautiful-dnd
+          - react-datepicker
+          - react-error-overlay
+          - react-infinite-scroll-component
+          - react-toastify
+          - react-loading-skeleton
+          - react-modal
+          - react-paginate
+        update-types:
+          - major
+      ui-components-security-updates:
+        applies-to: security-updates
+        patterns:
+          - rc-collapse
+          - rc-slider
+          - react-beautiful-dnd
+          - react-datepicker
+          - react-error-overlay
+          - react-infinite-scroll-component
+          - react-toastify
+          - react-loading-skeleton
+          - react-modal
+          - react-paginate
+        update-types:
+          - minor
+          - patch
+      pdf:
+        applies-to: version-updates
+        patterns:
+          - '@react-pdf/renderer'
+          - file-saver
+        update-types:
+          - major
+      pdf-security-updates:
+        applies-to: security-updates
+        patterns:
+          - '@react-pdf/renderer'
+          - file-saver
+        update-types:
+          - minor
+          - patch
+      barcode:
+        applies-to: version-updates
+        patterns:
+          - barcode-validator
+          - react-barcode
+        update-types:
+          - major
+      barcode-security-updates:
+        applies-to: security-updates
+        patterns:
+          - barcode-validator
+          - react-barcode
+        update-types:
+          - minor
+          - patch
+      development:
+        applies-to: version-updates
+        patterns:
+          - cross-env
+          - concurrently
+          - browser-sync
+          - browser-sync-webpack-plugin
+          - eslint
+          - eslint-config-airbnb
+          - eslint-plugin-import
+          - eslint-plugin-jsx-a11y
+          - eslint-plugin-react
+          - husky
+          - yaml
+        update-types:
+          - major
+      development-security-updates:
+        applies-to: security-updates
+        patterns:
+          - cross-env
+          - concurrently
+          - browser-sync
+          - browser-sync-webpack-plugin
+          - eslint
+          - eslint-config-airbnb
+          - eslint-plugin-import
+          - eslint-plugin-jsx-a11y
+          - eslint-plugin-react
+          - husky
+          - yaml
+        update-types:
+          - minor
+          - patch
+      bundler:
+        applies-to: version-updates
+        patterns:
+          - webpack
+          - webpack-cli
+          - webpack-dev-server
+          - webpack-merge
+          - html-webpack-plugin
+          - copy-webpack-plugin
+          - compression-webpack-plugin
+          - nodemon-webpack-plugin
+          - '@svgr/webpack'
+          - css-loader
+          - style-loader
+          - sass-loader
+          - url-loader
+          - html-loader
+          - babel-loader
+          - file-loader
+          - raw-loader
+          - core-js
+          - '@babel/core'
+          - '@babel/preset-env'
+          - '@babel/preset-react'
+          - '@babel/register'
+          - '@babel/eslint-parser'
+          - babel-jest
+          - babel-plugin-styled-components
+          - react-refresh
+          - '@pmmmwh/react-refresh-webpack-plugin'
+        update-types:
+          - major
+      bundler-security-updates:
+        applies-to: security-updates
+        patterns:
+          - webpack
+          - webpack-cli
+          - webpack-dev-server
+          - webpack-merge
+          - html-webpack-plugin
+          - copy-webpack-plugin
+          - compression-webpack-plugin
+          - nodemon-webpack-plugin
+          - '@svgr/webpack'
+          - css-loader
+          - style-loader
+          - sass-loader
+          - url-loader
+          - html-loader
+          - babel-loader
+          - file-loader
+          - raw-loader
+          - core-js
+          - '@babel/core'
+          - '@babel/preset-env'
+          - '@babel/preset-react'
+          - '@babel/register'
+          - '@babel/eslint-parser'
+          - babel-jest
+          - babel-plugin-styled-components
+          - react-refresh
+          - '@pmmmwh/react-refresh-webpack-plugin'
+        update-types:
+          - minor
+          - patch
+      testing:
+        applies-to: version-updates
+        patterns:
+          - jest
+          - jest-environment-jsdom
+          - '@testing-library/react'
+          - '@testing-library/jest-dom'
+          - '@testing-library/user-event'
+          - regenerator-runtime
+          - history
+          - axios-mock-adapter
+          - nock
+          - redis-mock
+          - redux-saga-tester
+          - supertest
+        update-types:
+          - major
+      testing-security-updates:
+        applies-to: security-updates
+        patterns:
+          - jest
+          - jest-environment-jsdom
+          - '@testing-library/react'
+          - '@testing-library/jest-dom'
+          - '@testing-library/user-event'
+          - regenerator-runtime
+          - history
+          - axios-mock-adapter
+          - nock
+          - redis-mock
+          - redux-saga-tester
+          - supertest
+        update-types:
+          - minor
+          - patch
