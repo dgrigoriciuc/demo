@@ -164,7 +164,7 @@
     "babel-plugin-styled-components": "^2.1.4",
     "cross-env": "^7.0.3",
     "html-webpack-plugin": "^5.6.0",
-    "husky": "^8.0.3",
+    "husky": "^9.1.7",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "nock": "^13.5.4",
